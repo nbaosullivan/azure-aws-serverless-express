@@ -8,7 +8,7 @@ export default function azureFunctionHandler(app, binaryTypes) {
 
   return (context, req) => {
     const path = url.parse(req.originalUrl).pathname;
-    req.headers.cookie.replace(/\.RIFBA\.E5C67A1B-73F8-4465-BC33-FEA178637429=[^\s\\]+/g,'');
+    req.headers.cookie = req.headers.cookie.replace(/\.RIFBA\.E5C67A1B-73F8-4465-BC33-FEA178637429=[^\s\\]+/g,'');
     const event = {
       path: path,
       httpMethod: req.method,
